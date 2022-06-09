@@ -1,0 +1,46 @@
+﻿<Window x:Class="GameFight.Level"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GameFight"
+        mc:Ignorable="d"
+        Title="Level" Height="620" Width="1000">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Border x:Name="HeroBorder" BorderBrush="Black" BorderThickness="1" Margin="100,10,100,170">
+            <Image Name="imgHero"/>
+        </Border>
+        <Border x:Name="EnemyBorder" BorderBrush="Black" BorderThickness="1" Margin="100,10,100,170" Grid.Column="1">
+            <Image Name="imgEnemy"/>
+        </Border>
+
+        <ProgressBar x:Name="heroHealthBar" HorizontalAlignment="Center" Height="23" Margin="0,439,0,0" VerticalAlignment="Top" Width="335" Minimum="0"/>
+        <ProgressBar x:Name="enemyHealthBar" HorizontalAlignment="Center" Height="22" Margin="0,439,0,0" VerticalAlignment="Top" Width="335" Grid.Column="1" Minimum="0"/>
+        <Label Content="Hero" HorizontalAlignment="Center" Margin="0,524,0,0" VerticalAlignment="Top" Height="58" Width="336" FontSize="24" HorizontalContentAlignment="Center"/>
+        <Label x:Name="enemyNameLabel" Content="" HorizontalAlignment="Center" Margin="0,497,0,0" VerticalAlignment="Top" Height="85" Width="336" Grid.Column="1" FontSize="24" HorizontalContentAlignment="Center"/>
+        <Button x:Name="attackButton" Content="Attack" HorizontalAlignment="Left" Margin="82,467,0,0" VerticalAlignment="Top" Height="48" Width="168" FontSize="22" Click="attackButton_Click"/>
+        <Button x:Name="healButton" Content="Heal" HorizontalAlignment="Left" Margin="250,467,0,0" VerticalAlignment="Top" Height="48" Width="168" FontSize="22" Click="healButton_Click"/>
+        <Button x:Name="giveUpButton" Content="Give Up" HorizontalAlignment="Left" Margin="435,530,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2" Height="34" Width="130" FontSize="14" Click="giveUpButton_Click"/>
+        <Label x:Name="heroHealthLabel" Content="" HorizontalAlignment="Center" Margin="0,438,0,0" VerticalAlignment="Top" Width="120" HorizontalContentAlignment="Center"/>
+        <Label x:Name="enemyHealthLabel" Content="" HorizontalAlignment="Center" Margin="0,438,0,0" VerticalAlignment="Top" Width="120" HorizontalContentAlignment="Center" Grid.Column="1"/>
+        <Label x:Name="healCountLabel" Content="5" HorizontalAlignment="Left" Margin="49,10,0,0" VerticalAlignment="Top" Height="45" Width="51" FontSize="22"/>
+        <Image Source="/Resources/Potion_of_healing.png" HorizontalAlignment="Left" Height="46" Margin="10,13,0,0" VerticalAlignment="Top" Width="34" RenderTransformOrigin="0.5,0.5">
+            <Image.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform AngleX="0.597"/>
+                    <RotateTransform/>
+                    <TranslateTransform X="0.24"/>
+                </TransformGroup>
+            </Image.RenderTransform>
+        </Image>
+        <Image Source="/Resources/Versus.jpg" HorizontalAlignment="Left" Height="130" Margin="435,222,0,0" VerticalAlignment="Top" Width="130" Grid.ColumnSpan="2"/>
+    </Grid>
+</Window>
